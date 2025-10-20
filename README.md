@@ -20,13 +20,14 @@ A **custom cross-attention layer** was designed to connect the encoder’s outpu
 
 1. **Encoder (BERT):** processes the English text and extracts contextual embeddings for each token.  
 2. **Cross-Attention:** computes the relationship between the decoder queries and encoder outputs using:
-$
-   \[
-   \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-   \]
- $  
+
+$$
+   \\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^\\top}{\\sqrt{d_k}}\\right)V
+   $$
+ 
    This mechanism lets the decoder "attend" to relevant parts of the input sentence when predicting the next word.
-3. **Decoder (GPT-2):** generates the French translation word by word, guided by the encoder’s information.  
+   
+3. **Decoder (GPT-2):** generates the French translation word by word, guided by the encoder’s information.
 4. **Training:** the model was fine-tuned end-to-end on a bilingual dataset using a CrossEntropy loss.
 
 ---
